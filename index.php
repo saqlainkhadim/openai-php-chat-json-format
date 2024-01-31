@@ -39,4 +39,9 @@ $client = \OpenAI::client($yourApiKey);
 
 $result = $client->chat()->create($payload);
 
-return json_decode($result->choices[0]->message->content);
+$jsonData = json_decode($result->choices[0]->message->content);
+
+echo "<pre>";
+var_dump($jsonData);
+echo "</pre>";
+
